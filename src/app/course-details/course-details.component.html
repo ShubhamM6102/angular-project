@@ -1,0 +1,81 @@
+
+
+<div class="course-details-container">
+    <div class="course-image-container">
+        <img src="{{courses?.imageSource}}"/>
+       </div>
+       
+    <p class="course-title">{{courses?.title}}</p>
+    <p class="course-description">{{courses?.description}}</p>
+        <p class="course-creator">{{courses?.creator}}</p>
+       <p>
+        <span class="course-rating">{{courses?.rating}}</span>
+        <span class="course-reviewCount">{{courses?.reviewCount}}</span>
+    </p>
+    <p>
+        <span class="course-duration">{{courses?.duration}} total Hours</span>
+        <span class="course-lectures">{{courses?.lecturesCount}}lectures</span>
+        <span class="course-level">{{courses?.level}}</span>
+        </p>
+</div>
+
+<div>
+    <p class="requirement"> <span>Requirement</span></p>
+    <div *ngFor="let Requirement of courses?.requirements">
+        
+            <p>
+                <li  class="li">
+                <span class="addrequrirements">{{Requirement?.addrequrirements}}</span>
+                </li>
+            </p>
+    </div>
+
+        </div>
+    
+    <div>
+    <p class="lectures"> <span>Lectures</span></p>
+    <div *ngFor="let Lecture of courses?.lectures">
+        
+            <p class="addlecture">
+                
+                <span> <button  mat-icon-button color="warn" ><mat-icon>play_circle</mat-icon></button></span>   
+                <span class="lectureDesc">{{Lecture?.lectureDesc}}</span>
+                <span class="clock"> <button  mat-icon-button  ><mat-icon>query_builder</mat-icon></button></span> 
+                <span class="lectureDuration">{{Lecture?.lectureDuration}} Hours Lecture</span>
+                <span><button  mat-icon-button color="warn" ><mat-icon><span class="material-icons-round">
+                    download_for_offline    </span></mat-icon></button></span>
+            </p>
+        
+
+        </div>
+    </div>
+
+    
+        <p class="review"> Reviews</p>
+        <div class="container-fluid">
+            <div *ngFor="let Review of courses?.reviews">
+            <div class="row">
+              <div class="col-sm-1 ">
+                <span><img  ngxGravatar  src="{{Review?.profileImage}}"></span>
+              </div>
+                <div class="col-sm-11">
+                    <span  class="r1">{{Review?. reviwerName}}</span>
+                    <div>
+                        <span >{{Review?.reviewRating}}</span>
+                    <span class="material-icons">star</span>
+                </div>
+                    <p class="textreview">{{Review?.addreviews}}</p>
+                    <div class="subscribe">
+                        <button  mat-icon-button color="blue" ><mat-icon>thumb_up_off_alt</mat-icon></button>
+                        <button mat-icon-button color="warn" ><mat-icon>thumb_down_off_alt</mat-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+       
+
+
+
+

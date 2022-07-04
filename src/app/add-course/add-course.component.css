@@ -1,0 +1,29 @@
+.centre {
+    text-align: center;
+}
+.addcourse {
+    position:relative ;
+   
+}
+.background {
+    background-color: blueviolet;
+}
+.gotocourse {
+    padding-bottom: 10px;
+    text-align: center;
+}
+.addcourse {
+    padding-bottom: 10px;
+    text-align: center;
+}
+.save {
+    padding-bottom: 10px;
+    text-align: center;
+}
+.form {
+    text-align: center;   
+}
+.hover {
+    color: blue;
+    padding-left: 20px;
+}

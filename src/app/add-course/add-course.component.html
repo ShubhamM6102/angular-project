@@ -1,0 +1,149 @@
+
+ <mat-card>
+    <h2 class="centre">Add Course</h2>
+    <div class="gotocourse">
+        <button mat-raised-button color="primary" [routerLink]="'/search'">Go to Courses</button>
+    </div>
+    <div class="addcourse">
+    <button class="addcourse"   mat-raised-button (click)="addCourse()" color="primary">Add Course</button>
+</div>
+<div class="form">
+    <form [formGroup] = "addCourseFormGroup">
+        <div formArrayName="courses">
+            <div *ngFor="let course of courses.controls; let i = index">
+                <div formArrayName="{{i}}">
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>couseId</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="courseId"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>Image Source</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="imageSource"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label> Title</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="title"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="description"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>creator</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="creator"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>rating</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="rating"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>reviewCount</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="reviewCount"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>duration</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="duration"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>lecture Count</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="lecturesCount"/>
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill">
+                            <mat-label>level</mat-label>
+                            <input matInput placeholder="Placeholder" formControlName="level"/>
+                        </mat-form-field>
+                    </div>
+                    <button mat-raised-button (click)="addLecture(i)" color="primary">Add lecture</button>
+                    <div formArrayName="lectures">
+                        <div *ngFor="let lecture of getLectures(i).controls; let j = index">
+                            <div [formArrayName]="j">
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>lecture Description</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="lectureDesc"/>
+                                    </mat-form-field>
+                                </div>
+                                <div >
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>lecture Duration</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="lectureDuration"/>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button mat-raised-button (click)="addReview(i)" color="primary">Add Review</button>
+                    <div formArrayName="reviews">
+                        <div *ngFor="let review of getReview(i).controls; let m = index">
+                            <div [formArrayName]="m">
+                                <div >
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Image Source</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="profileImage"/>
+                                    </mat-form-field>
+                                </div>
+                                <div >
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Reviewer Name</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="reviwerName"/>
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>review-rating</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="reviewRating"/>
+                                    </mat-form-field>
+                                </div>
+                                <div >
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>review</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="addreviews"/>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button mat-raised-button (click)="addRequiremnet(i)" color="primary">Add Requirements</button>
+                    <div formArrayName="requirements">
+                        <div *ngFor="let requirement of   getRequirement(i).controls; let k = index">
+                            <div [formArrayName]="k">
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Add Requirements</mat-label>
+                                        <input matInput placeholder="Placeholder" formControlName="addrequrirements"/>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="save">
+    <button mat-raised-button color="primary"(click)="saveCourses()" [disabled]="addCourseFormGroup.invalid"> Save</button>
+</div>
+</mat-card>
+
+       
+

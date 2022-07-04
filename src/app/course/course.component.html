@@ -1,0 +1,19 @@
+<div class="course-container" (click)="showCourseDetails()"> 
+    <div class="course-image-container">
+     <img [src]="course?.imageSource"/>
+    </div>
+    <div class="course-details-container">
+        <p class="course-title">{{course?.title}}</p>
+        <p class="course-description">{{course?.description}}</p>
+            <p class="course-creator">{{course?.creator}}</p>
+           <p>
+            <span class="course-rating">{{course?.rating}}</span>
+            <span class="course-reviewCount">{{course?.reviewCount}}</span>
+        </p>
+        <p>
+            <span class="course-duration">{{course?.duration}} :total Hours</span>
+            <span class="course-lectures">{{course?.lecturesCount}} :lectures</span>
+            <span class="course-level">{{course?.level}} :Level</span>
+            </p>
+    </div>
+</div>
